@@ -19,6 +19,10 @@ vector<int>graph2[N]; // => Creating N vectors
 //for weighted graph
 
 vector<pair<int, int>>graph2WT[N];
+//declaring an array of vectors, where each vector holds pairs of integers.
+//for ex => graph2WT[0] = [(1,5),(2,3)] means
+//0 node is connected with 1 with a weight 5
+//similarly 0 node is connected with 2 with a weight 3
 int main() {
     fast;
     // Adjacency Matrix
