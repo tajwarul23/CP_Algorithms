@@ -14,15 +14,23 @@ vector<int>g[N];
 bool vis[N];
 
 void dfs(int vertex){
+/* Take action on the vertex after entering the vertex
+*/
     vis[vertex] = true;
     cout<<vertex<<endl;
 
     for(auto child : g[vertex]){
+    /* Take action on the child before entering the child node
+    */
         cout<<"par "<<vertex<<" child"<<child<<endl;
         if(vis[child])continue;
 
         dfs(child);
+    /* Take action on the child after exiting the child node
+    */
     }
+    /* Take action on the vertex before exiting the vertex
+    */
 }
 int main() {
     fast;
