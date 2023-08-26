@@ -9,37 +9,46 @@
 #define vout(v) for (auto it : v) cout << it << " "; cout << "\n";
 
 using namespace std;
-const int N = 1e5+10;
-vector<int>g[N];
+const int N = 1e5 + 10;
 bool vis[N];
+vector<int>g[N];
 
 void dfs(int vertex){
+    
     vis[vertex] = true;
-    cout<<vertex<<endl;
 
     for(auto child : g[vertex]){
-        cout<<"par "<<vertex<<" child"<<child<<endl;
         if(vis[child])continue;
-
         dfs(child);
     }
 }
 int main() {
     fast;
     int n,m; cin>>n>>m;
-
     for (int i = 0; i <m; i++)
     {
-        int v1,v2; 
-        cin>>v1>>v2;
-
-        g[v1].push_back(v2);
-        g[v2].push_back(v1);
-
+        int x,y; cin>>x>>y;
+        g[x].pb(y);
+        g[y].pb(x);
     }
-
-    int start = 1;
-    dfs(start);
-    
+    int count = 0;
+    for (int i = 1; i <=n; i++)
+    {
+        if(!vis[i]){
+            dfs(i);
+            count++;
+        }
+    }
+    if(count==1 and m == n - 1)cout<<"YES\n";
+    else cout<<"NO\n";
     return 0;
 }
+/*
+https://www.spoj.com/problems/PT07Y/ => is it A tree?
+if number of edges == node - 1 and number of connected component == 1 then it's a tree
+
+https://www.hackerearth.com/problem/algorithm/connected-components-in-a-graph/?purpose=login&source=problem-page&update=google
+=> number of connected components 
+ number of times  dfs will run == number of components
+*/
+
