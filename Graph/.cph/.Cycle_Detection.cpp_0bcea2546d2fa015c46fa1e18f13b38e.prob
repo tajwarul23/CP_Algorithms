@@ -1,0 +1,1 @@
+{"name":"Local: Cycle_Detection","url":"c:\\]CP_Algorithms\\Graph\\Cycle_Detection.cpp","tests":[{"id":1693124852459,"input":"2 2\n1 2\n2 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\]CP_Algorithms\\Graph\\Cycle_Detection.cpp","group":"local","local":true}
