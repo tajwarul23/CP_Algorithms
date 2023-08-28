@@ -51,3 +51,34 @@ int main() {
     
     return 0;
 }
+/*
+************DFS ON WEIGHTED GRAPH*****************
+    void dfs(int vertex, int sum){
+    vis[vertex] = true;
+    ans = max(ans, sum);
+    for(auto child : g[vertex]){
+        if(!vis[child.first])
+        dfs(child.first, sum+child.second);
+    }
+    vis[vertex] = false;
+}
+
+ int n,m; cin>>n>>m;
+        for (int i = 0; i <m; i++)
+        {
+            int v1,v2,w;
+            cin>>v1>>v2>>w;
+            g[v1].push_back({v2,w});
+            g[v2].push_back({v1,w});
+        }
+        
+        for (int i = 1; i <=n; i++)
+        {
+            dfs(i, 0);
+        }
+        
+    cout<<ans<<endl;
+
+    question => https://atcoder.jp/contests/abc317/tasks/abc317_c
+
+*/
