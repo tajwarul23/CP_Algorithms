@@ -47,3 +47,38 @@ int main() {
     
     return 0;
 }
+/*'
+Question => https://practice.geeksforgeeks.org/problems/bipartite-graph/1
+*/
+
+/*
+Solve ====>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+lass Solution {
+    private: 
+    bool dfs(int vertex, int c, vector<int>adj[], int colour[]){
+        colour[vertex] = c;
+        
+        for(auto child : adj[vertex]){
+            if(colour[child] == -1){
+                if(dfs(child, !c, adj, colour) == false)return false;
+            }
+            else if(colour[child] == c)return false;
+        }
+        return true;
+    }
+public:
+	bool isBipartite(int V, vector<int>adj[]){
+	    // Code here
+	    int colour[V];
+	    for(int i =0; i<V; i++)colour[i] = -1;
+	    for(int i=0; i<V; i++){
+	        if(colour[i]==-1){
+	            if(dfs(i,0,adj,colour)==false)return false;
+	        }
+	    }
+	    return true;
+	    
+	}
+
+};
+*/
