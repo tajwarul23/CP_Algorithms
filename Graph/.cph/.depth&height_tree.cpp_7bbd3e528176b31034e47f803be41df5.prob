@@ -1,0 +1,1 @@
+{"name":"Local: depth&height_tree","url":"c:\\]CP_Algorithms\\Graph\\depth&height_tree.cpp","tests":[{"id":1693317164849,"input":"13\n1 2\n1 3\n1 3\n2 5\n3 4\n5 6\n5 7\n5 8\n8 12\n4 9\n4 10 \n10 11","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\]CP_Algorithms\\Graph\\depth&height_tree.cpp","group":"local","local":true}
