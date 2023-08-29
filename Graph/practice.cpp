@@ -15,21 +15,14 @@ int main() {
     int tc; cin >> tc;
     while (tc--) {
         ll n; cin>>n;
-        ll arr[n];
-        arrin(arr, n);
-        ll ls=0,rs=0,mx=0;
+        unordered_map<ll,ll>mp;
+        ll x, count = 0;
         for (ll i = 0; i <n; i++)
         {
-            rs+=arr[i];
+            cin>>x;
+            count+=mp[x-i]++;
         }
-        for (ll i = 0; i <n-1; i++)
-        {
-            ls+=arr[i];
-            rs-=arr[i];
-            mx = max(mx, __gcd(ls, rs));
-        }
-        cout<<mx<<endl;
-        
+        cout<<count<<endl;
         
     }
     return 0;
